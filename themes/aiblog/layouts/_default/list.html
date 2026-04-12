@@ -1,0 +1,29 @@
+{{ define "main" }}
+<div class="page-header">
+  <h1>{{ if .IsHome }}Latest Posts{{ else }}{{ .Title }}{{ end }}</h1>
+  {{ if .IsHome }}<p class="site-description">{{ .Site.Params.description }}</p>{{ end }}
+</div>
+
+{{ partial "adsense.html" . }}
+
+<div class="post-list">
+  {{ $paginator := .Paginate .Pages 10 }}
+  {{ range $paginator.Pages }}
+  <article class="post-card">
+    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+    <div class="post-meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      {{ with .Params.categories }}
+      <span class="post-categories">
+        {{ range . }} <a href="{{ "categories/" | relURL }}{{ . | urlize }}/">{{ . }}</a> {{ end }}
+      </span>
+      {{ end }}
+    </div>
+    <p class="post-summary">{{ .Summary }}</p>
+    <a href="{{ .Permalink }}" class="read-more">Read more →</a>
+  </article>
+  {{ end }}
+</div>
+
+{{ template "_internal/pagination.html" . }}
+{{ end }}

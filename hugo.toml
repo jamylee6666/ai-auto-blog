@@ -1,0 +1,50 @@
+baseURL = "https://jamylee6666.github.io/ai-auto-blog/"
+languageCode = "en-us"
+title = "AI Tools & Side Hustle Guide"
+theme = "aiblog"
+
+[params]
+  description = "Discover the best AI tools, tutorials, and side hustle strategies to boost your productivity and income."
+  author = "AI Tools Guide"
+  # Google AdSense ID - 申請通過後填入
+  adsenseId = ""
+  # Google Analytics ID - 選填
+  googleAnalytics = ""
+
+[markup]
+  [markup.highlight]
+    style = "monokai"
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[outputs]
+  home = ["HTML", "RSS"]
+
+[sitemap]
+  changefreq = "daily"
+  priority = 0.5
+
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "AI Tools"
+  url = "/categories/ai-tools/"
+  weight = 2
+
+[[menu.main]]
+  name = "Side Hustle"
+  url = "/categories/side-hustle/"
+  weight = 3
+
+[[menu.main]]
+  name = "Tutorials"
+  url = "/categories/tutorials/"
+  weight = 4

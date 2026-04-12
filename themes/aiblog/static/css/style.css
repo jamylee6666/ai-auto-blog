@@ -1,0 +1,259 @@
+/* Reset & Base */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.7;
+  color: #333;
+  background: #fafafa;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Header */
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111;
+}
+
+.site-nav a {
+  margin-left: 24px;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.site-nav a:hover, .site-nav a.active {
+  color: #2563eb;
+}
+
+/* Page Header */
+.page-header {
+  padding: 40px 0 20px;
+}
+
+.page-header h1 {
+  font-size: 2rem;
+  color: #111;
+}
+
+.site-description {
+  color: #666;
+  margin-top: 8px;
+  font-size: 1.1rem;
+}
+
+/* Post List */
+.post-list { padding: 20px 0; }
+
+.post-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 20px;
+  border: 1px solid #e5e7eb;
+  transition: box-shadow 0.2s;
+}
+
+.post-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.post-card h2 {
+  font-size: 1.35rem;
+  margin-bottom: 8px;
+}
+
+.post-card h2 a { color: #111; }
+.post-card h2 a:hover { color: #2563eb; text-decoration: none; }
+
+.post-meta {
+  color: #888;
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+}
+
+.post-categories a {
+  background: #eff6ff;
+  color: #2563eb;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  margin-left: 8px;
+}
+
+.post-summary {
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.read-more {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Single Post */
+.post-single { padding: 40px 0; }
+
+.post-header {
+  margin-bottom: 32px;
+}
+
+.post-header h1 {
+  font-size: 2.2rem;
+  line-height: 1.3;
+  color: #111;
+}
+
+.reading-time { margin-left: 16px; }
+
+.post-tags {
+  margin-top: 12px;
+}
+
+.tag {
+  background: #f3f4f6;
+  color: #555;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  margin-right: 6px;
+}
+
+.post-content {
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.post-content h2 {
+  font-size: 1.5rem;
+  margin: 32px 0 16px;
+  color: #111;
+}
+
+.post-content h3 {
+  font-size: 1.25rem;
+  margin: 24px 0 12px;
+  color: #222;
+}
+
+.post-content p { margin-bottom: 16px; }
+
+.post-content ul, .post-content ol {
+  margin-bottom: 16px;
+  padding-left: 24px;
+}
+
+.post-content li { margin-bottom: 6px; }
+
+.post-content code {
+  background: #f3f4f6;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.post-content pre {
+  background: #1e1e1e;
+  color: #d4d4d4;
+  padding: 16px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin-bottom: 16px;
+}
+
+.post-content pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+}
+
+.post-content img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin: 16px 0;
+}
+
+.post-content blockquote {
+  border-left: 4px solid #2563eb;
+  padding: 12px 20px;
+  margin: 16px 0;
+  background: #eff6ff;
+  color: #444;
+}
+
+/* Post Navigation */
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Ad Container */
+.ad-container {
+  margin: 20px 0;
+  text-align: center;
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid #e5e7eb;
+  padding: 24px 0;
+  margin-top: 40px;
+  text-align: center;
+  color: #888;
+  font-size: 0.85rem;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 20px 0;
+  list-style: none;
+}
+
+.page-item a, .page-item span {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+
+.page-item.active span {
+  background: #2563eb;
+  color: #fff;
+  border-color: #2563eb;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .site-header .container { flex-direction: column; gap: 8px; }
+  .site-nav a { margin-left: 12px; }
+  .page-header h1 { font-size: 1.5rem; }
+  .post-header h1 { font-size: 1.6rem; }
+}

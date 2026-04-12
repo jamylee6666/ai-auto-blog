@@ -1,0 +1,6 @@
+name = "aiblog"
+license = "MIT"
+description = "A clean, SEO-optimized blog theme with AdSense support"
+
+[author]
+  name = "AI Tools Guide"
