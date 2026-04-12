@@ -58,7 +58,7 @@ theme = "hugo-theme-stack"
   category = "categories"
 
 [outputs]
-  home = ["HTML", "RSS"]
+  home = ["HTML", "RSS", "JSON"]
 
 [sitemap]
   changefreq = "daily"

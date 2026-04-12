@@ -126,6 +126,31 @@ def run_daily(run_en: bool = True, run_zh: bool = True, dry_run: bool = False):
             rel = Path(path).relative_to(PROJECT_ROOT) if path else "—"
             print(f"  [{lang.upper()}] [{status}] {kw} → {rel}")
 
+        # Auto git add/commit/push
+        success_paths = [path for _, _, path, ok in results if ok and path]
+        if success_paths:
+            print("\n=== Git 自動推送 ===")
+            import subprocess
+            today = datetime.now().strftime("%Y-%m-%d")
+            try:
+                # Stage new posts and used-keyword tracking files
+                subprocess.run(
+                    ["git", "-C", str(PROJECT_ROOT), "add", "content/", "scripts/keywords_en_used.txt", "scripts/keywords_zh_used.txt"],
+                    check=True
+                )
+                commit_msg = f"Auto post: {today} ({len(success_paths)} article(s))"
+                subprocess.run(
+                    ["git", "-C", str(PROJECT_ROOT), "commit", "-m", commit_msg],
+                    check=True
+                )
+                subprocess.run(
+                    ["git", "-C", str(PROJECT_ROOT), "push"],
+                    check=True
+                )
+                print(f"  [OK] 推送成功：{commit_msg}")
+            except subprocess.CalledProcessError as e:
+                print(f"  [警告] Git 操作失敗: {e}")
+
 
 def main():
     parser = argparse.ArgumentParser(description="每日自動發文")
