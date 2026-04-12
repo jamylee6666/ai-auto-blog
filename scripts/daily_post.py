@@ -126,6 +126,22 @@ def run_daily(run_en: bool = True, run_zh: bool = True, dry_run: bool = False):
             rel = Path(path).relative_to(PROJECT_ROOT) if path else "—"
             print(f"  [{lang.upper()}] [{status}] {kw} → {rel}")
 
+        # Auto-deploy: commit and push generated posts
+        successful = [r for r in results if r[3]]
+        if successful:
+            import subprocess
+            keywords = ", ".join(r[1] for r in successful)
+            try:
+                subprocess.run(["git", "add", "-A"], cwd=str(PROJECT_ROOT), check=True)
+                subprocess.run(
+                    ["git", "commit", "-m", f"auto: daily post [{today}] {keywords}"],
+                    cwd=str(PROJECT_ROOT), check=True
+                )
+                subprocess.run(["git", "push"], cwd=str(PROJECT_ROOT), check=True)
+                print("\n  [git] 已推送至 GitHub，部署中...")
+            except subprocess.CalledProcessError as e:
+                print(f"\n  [git 錯誤] {e}")
+
 
 def main():
     parser = argparse.ArgumentParser(description="每日自動發文")
