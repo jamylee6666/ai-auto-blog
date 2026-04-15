@@ -2,6 +2,7 @@ baseURL = "https://jamylee6666.github.io/ai-auto-blog/"
 languageCode = "en-us"
 title = "AI Tools & Side Hustle Guide"
 theme = "hugo-theme-stack"
+googleAnalytics = "G-CDVT3JC907"
 
 [params]
   description = "Discover the best AI tools, tutorials, and side hustle strategies to boost your productivity and income."
@@ -11,7 +12,7 @@ theme = "hugo-theme-stack"
   # Google AdSense ID - 申請通過後填入
   adsenseId = ""
   # Google Analytics ID - 選填
-  googleAnalytics = ""
+  googleAnalytics = "G-CDVT3JC907"
 
   [params.footer]
     since = 2026
