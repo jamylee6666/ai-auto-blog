@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jamylee6666.github.io/ai-auto-blog/sitemap.xml
