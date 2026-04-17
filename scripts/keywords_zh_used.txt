@@ -5,3 +5,4 @@ AI繪圖工具入門：Midjourney vs Stable Diffusion
 自媒體創作者的AI工具箱
 低成本創業：用AI工具打造線上事業
 AI時代的職涯規劃：哪些技能最有價值
+ChatGPT提示詞工程入門指南
