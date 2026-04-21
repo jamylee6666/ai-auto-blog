@@ -10,3 +10,4 @@ ChatGPT提示詞工程入門指南
 用Python打造自動化副業
 如何用Notion AI管理專案與筆記
 AI副業實戰：Data Annotation接案指南
+用AI自動化社群媒體內容發布
