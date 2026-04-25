@@ -1,5 +1,5 @@
 ---
-title: "AI Tools for Social Media Marketing in 2024"
+title: "AI Tools for Social Media Marketing in 2026"
 date: 2026-04-13T22:53:35+08:00
 draft: false
 description: "Discover the best AI tools to automate content creation, scheduling, and analytics for your social media strategy. Boost engagement today."

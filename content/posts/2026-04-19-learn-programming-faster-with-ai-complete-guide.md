@@ -7,7 +7,7 @@ categories:
   - "ai-tools"
   - "tutorials"
 tags:
-  - "#AILearning #ProgrammingTips #CodingTools #DevSkills #AIPowered"
+  - "AILearning ProgrammingTips CodingTools DevSkills AIPowered"
 ---
 
 # How to Learn Programming Faster with AI Help

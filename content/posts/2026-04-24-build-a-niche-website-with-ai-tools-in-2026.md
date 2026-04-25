@@ -1,5 +1,5 @@
 ---
-title: "Build a Niche Website with AI Tools in 2024"
+title: "Build a Niche Website with AI Tools in 2026"
 date: 2026-04-24T10:00:34+08:00
 draft: false
 description: "Learn how to create a profitable niche website using AI tools for content, design, and SEO. Step-by-step guide included."
@@ -20,7 +20,7 @@ Building a niche website used to require hiring expensive developers, copywriter
 
 In this guide, I'll walk you through the entire process—from finding the perfect niche to launching your site and monetizing it.
 
-## Why Build a Niche Website in 2024?
+## Why Build a Niche Website in 2026?
 
 Before we dive into the how, let's talk about the why. A niche website focuses on a specific topic or audience rather than trying to be everything to everyone. This approach has several advantages:
 

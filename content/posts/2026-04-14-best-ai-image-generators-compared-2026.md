@@ -1,5 +1,5 @@
 ---
-title: "Best AI Image Generators Compared 2024"
+title: "Best AI Image Generators Compared 2026"
 date: 2026-04-14T10:00:33+08:00
 draft: false
 description: "Compare top AI image generators like DALL-E, Midjourney & Stable Diffusion. Find the best tool for your needs with our detailed comparison."
