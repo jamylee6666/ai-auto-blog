@@ -41,7 +41,8 @@ def load_keywords(filepath: Path) -> list[str]:
     """讀取關鍵字檔，忽略空行"""
     if not filepath.exists():
         return []
-    return [line.strip() for line in filepath.read_text(encoding="utf-8").splitlines() if line.strip()]
+    return [line.strip() for line in filepath.read_text(encoding="utf-8").splitlines()
+            if line.strip() and not line.strip().startswith("#")]
 
 
 def load_used(filepath: Path) -> set[str]:

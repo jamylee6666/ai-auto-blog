@@ -38,50 +38,66 @@ CONTENT_DIR = PROJECT_ROOT / "content" / "posts"
 # 確保目錄存在
 CONTENT_DIR.mkdir(parents=True, exist_ok=True)
 
-SYSTEM_PROMPT_EN = """You are an expert SEO blog writer. Write high-quality, engaging blog posts that are optimized for search engines.
+SYSTEM_PROMPT_EN = """You are a practical AI productivity blog writer who specializes in how-to articles that solve real, everyday problems.
 
 Rules:
-- Write in a conversational, helpful tone
+- Focus on ONE specific use case per article (e.g., batch-reply emails with AI, auto-generate meeting notes)
+- Opening: clearly state the reader's pain point — why they need this solution
+- Middle: step-by-step instructions that a complete beginner can follow
+- Always mention required tools/platforms and approximate time investment
+- Closing: provide 2-3 advanced tips or next steps
 - Use proper heading structure (H2, H3) for SEO
-- Include actionable tips and real examples
-- Write naturally — avoid keyword stuffing
 - Target 1200-1800 words
-- Include a compelling introduction and conclusion
-- Add relevant internal linking suggestions as [LINK: topic] placeholders
+- Friendly, practical tone — like a knowledgeable friend teaching you
+
+Internal links: The article MUST end with a "## Related Articles" section containing 2-3 [LINK: topic] placeholders from the same topic cluster (office automation / content creation / data processing / learning).
 
 Output format: Return ONLY the markdown content (no frontmatter, no title heading).
 """
 
-SYSTEM_PROMPT_ZH = """你是一位專業的 SEO 部落格寫手，擅長撰寫高品質、吸引讀者並對搜尋引擎優化的繁體中文文章。
+SYSTEM_PROMPT_ZH = """你是一位專注於 AI 實用工具的部落格作者，專門撰寫幫助讀者解決真實問題的繁體中文教學文章。
 
 規則：
-- 使用繁體中文撰寫，語氣自然親切、有幫助
+- 每篇聚焦一個具體場景（例如：用 AI 批量回 email、自動整理報表、產會議紀錄）
+- 開頭（100-150字）：點出讀者的痛點，說明為什麼需要這個方法
+- 中間：提供新手也能照做的具體步驟教學，說明需要哪些工具或平台、大概花多少時間
+- 結尾：給出 2-3 個進階用法建議
 - 使用正確的標題結構（H2、H3）以利 SEO
-- 加入實用技巧和真實範例
-- 自然融入關鍵字，避免過度堆砌
 - 目標字數：1200-1800 字
-- 包含引人入勝的開頭和結尾
-- 可用 [連結: 主題] 作為內部連結建議佔位符
+- 語氣自然、親切、實用，像是一位懂 AI 的朋友在手把手教你
+
+內部連結：文章結尾必須加上「## 相關文章」區塊，用 [連結: 主題] 格式列出 2-3 篇同系列文章
+（系列包含：辦公自動化 / 內容創作 / 資料處理 / 學習提升）。
 
 輸出格式：只回傳 Markdown 內文（不含 frontmatter，不含 H1 標題）。
 """
 
-PROMPT_TEMPLATE_EN = """Write a blog post about: {topic}
+PROMPT_TEMPLATE_EN = """Write a practical AI tutorial blog post about: {topic}
 
-Target audience: People interested in AI tools, technology, and online side hustles
+Target audience: Office workers or freelancers who want to use AI tools to boost productivity — no coding background required
 Categories: {categories}
 SEO keywords to naturally include: {keywords}
 
-Make it practical, with step-by-step instructions or lists where appropriate.
+Article structure to follow:
+1. Opening: describe the reader's pain point and why they need this
+2. Tools needed: list the tools/platforms with cost info (free tier if available)
+3. Step-by-step guide: 3-7 concrete steps with clear instructions
+4. Results: how much time it saves or what problem it solves
+5. Closing: 2-3 advanced tips + "## Related Articles" section with [LINK: topic] placeholders
 """
 
-PROMPT_TEMPLATE_ZH = """請用繁體中文撰寫一篇關於「{topic}」的部落格文章。
+PROMPT_TEMPLATE_ZH = """請用繁體中文撰寫一篇關於「{topic}」的實用 AI 教學文章。
 
-目標讀者：對 AI 工具、科技趨勢、生產力提升和程式開發感興趣的繁體中文讀者
+目標讀者：希望用 AI 工具提升工作效率的上班族或自由工作者，不需要程式設計背景
 文章分類：{categories}
 自然融入的 SEO 關鍵字：{keywords}
 
-請提供實用內容，適當使用步驟說明或條列式清單。
+請依照以下文章結構撰寫：
+1. 開頭（100-150字）：描述讀者的痛點，說明為什麼需要這個方法
+2. 工具介紹：需要哪些工具或平台，費用或免費方案說明
+3. 步驟教學：3-7個具體操作步驟，每步驟有清楚說明（新手友善）
+4. 實際效果：能省多少時間或解決什麼具體問題
+5. 結尾：2-3個進階用法建議 + 「## 相關文章」區塊（2-3篇同系列的 [連結: 主題]）
 """
 
 
@@ -101,7 +117,7 @@ def generate_metadata(client, topic: str, lang: str) -> dict:
 1. SEO 優化標題（吸引人，60字以內）
 2. Meta 描述（155字以內）
 3. 5個 SEO 關鍵字（逗號分隔）
-4. 1-2個文章分類，從以下選擇：[AI工具, 副業賺錢, 教學指南, 生產力, 科技趨勢, 程式開發]
+4. 1-2個文章分類，從以下選擇：[辦公自動化, 內容創作, 資料處理, 學習提升, AI工具教學, 生產力]
    並自動根據主題判斷最合適的分類
 5. 3-5個標籤（繁體中文）
 
@@ -117,7 +133,7 @@ TAGS: ...
 1. SEO-optimized title (compelling, under 60 chars)
 2. Meta description (under 155 chars)
 3. 5 SEO keywords (comma-separated)
-4. 1-2 categories — pick the most fitting from: [ai-tools, side-hustle, tutorials, productivity, tech-trends, dev]
+4. 1-2 categories — pick the most fitting from: [office-automation, content-creation, data-processing, learning, ai-tools, productivity]
 5. 3-5 tags
 
 Return in this exact format (only these lines, nothing else):
