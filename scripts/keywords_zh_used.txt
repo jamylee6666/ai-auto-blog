@@ -5,3 +5,4 @@ Claude AI vs ChatGPT 2026：工作場合哪個更好用
 用 AI 產生影片腳本：YouTube 創作者的效率工具
 用 AI 批量翻譯文件：多語言內容處理不再頭痛
 用 ChatGPT 整理客戶名單：Excel 資料清理實戰
+用 AI 讀懂技術文件：新手工程師的必備技巧
