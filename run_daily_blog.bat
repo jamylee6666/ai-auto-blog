@@ -15,5 +15,11 @@ for /f "tokens=1-3 delims=/ " %%a in ("%DATE%") do set TODAY=%%c-%%a-%%b
 git commit -m "feat: add %TODAY% daily posts" >> "%LOG%" 2>&1
 
 git push origin main >> "%LOG%" 2>&1
+set PUSH_RC=%ERRORLEVEL%
+if not "%PUSH_RC%"=="0" (
+    echo [ERROR] git push origin main failed with exit code %PUSH_RC% >> "%LOG%"
+    echo === BAT END %TIME% [push failed, rc=%PUSH_RC%] === >> "%LOG%"
+    exit /b %PUSH_RC%
+)
 
 echo === BAT END %TIME% === >> "%LOG%"
