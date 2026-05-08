@@ -7,3 +7,4 @@ Claude AI vs ChatGPT 2026：工作場合哪個更好用
 用 ChatGPT 整理客戶名單：Excel 資料清理實戰
 用 AI 讀懂技術文件：新手工程師的必備技巧
 用 AI 寫週報：10分鐘完成一週工作總結
+用 Claude AI 重寫舊文章：讓舊內容重獲流量
