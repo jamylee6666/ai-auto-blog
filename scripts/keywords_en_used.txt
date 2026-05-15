@@ -14,3 +14,4 @@ Clean and Organize Customer Data with ChatGPT
 Monitor Competitor Updates Automatically with AI
 Build a Fully Automated Workflow with Zapier and AI
 AI-Powered Excel Analysis: No Formulas Needed
+Write SQL Queries with AI: No Coding Background Required
