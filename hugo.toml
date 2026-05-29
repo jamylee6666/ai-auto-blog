@@ -3,6 +3,7 @@ languageCode = "en-us"
 title = "AI Tools & Side Hustle Guide"
 theme = "hugo-theme-stack"
 googleAnalytics = "G-CDVT3JC907"
+enableRobotsTXT = true
 
 [params]
   description = "Discover the best AI tools, tutorials, and side hustle strategies to boost your productivity and income."
@@ -36,8 +37,15 @@ googleAnalytics = "G-CDVT3JC907"
       enabled = false
 
   [params.widgets]
-    homepage = []
-    page = []
+    homepage = [
+      { type = "archives", params = { limit = 5 } },
+      { type = "categories", params = { limit = 10 } },
+      { type = "tag-cloud", params = { limit = 30 } },
+    ]
+    page = [
+      { type = "categories", params = { limit = 10 } },
+      { type = "tag-cloud", params = { limit = 30 } },
+    ]
 
   [params.colorScheme]
     toggle = true
@@ -64,6 +72,19 @@ googleAnalytics = "G-CDVT3JC907"
 [sitemap]
   changefreq = "daily"
   priority = 0.5
+
+[related]
+  threshold = 80
+  toLower = false
+  [[related.indices]]
+    name = "tags"
+    weight = 100
+  [[related.indices]]
+    name = "categories"
+    weight = 80
+  [[related.indices]]
+    name = "date"
+    weight = 10
 
 [[menu.main]]
   name = "Home"
