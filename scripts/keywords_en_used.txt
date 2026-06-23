@@ -24,3 +24,4 @@ Prompt Engineering for Beginners: Make AI Understand You
 How to Build an Automated SEO Blog with AI Tools
 How to Analyze Survey Results with AI (No Statistics Needed)
 Use ChatGPT as Your Personal Tutor for Any Skill
+How to Use AI to Create Standard Operating Procedures Fast
